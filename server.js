@@ -19,9 +19,9 @@ app.get("/timestamp/:date", function (req, res) {
 app.get("/timestamp", function (req, res) {
   res.json({ unix: null, natural: null });
 });
-
-app.listen(8080, function () {
-  console.log("App listening on port 8080");
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function () {
+  console.log("App listening on port " + PORT);
 });
 
 //User Story: I can pass a string as a parameter, and it will check to see whether that string contains either a unix timestamp or a natural language date (example: January 1, 2016).
